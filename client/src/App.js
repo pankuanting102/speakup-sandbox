@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 // import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 // import { Container } from "./components/Grid";
@@ -11,61 +12,57 @@ import React, { useEffect, useState } from "react";
 // import userAPI from "./utils/userAPI";
 // import ProtectedRoute from "./components/ProtectedRoute"
 
-import Landing from "./pages/Landing"
-import Start from "./pages/Start"
-import ChatBubble from "./pages/ChatBubble"
-import ChatBubbleDetail from "./pages/ChatBubbleDetail"
+import Landing from "./pages/Landing";
+// import Start from "./pages/Start";
+// import ChatBubble from "./pages/ChatBubble";
+import ChatBubbleDetail from "./pages/ChatBubbleDetail";
 
 function App() {
-// 	const [userState, setUserState] = useState({});
+  // 	const [userState, setUserState] = useState({});
 
-//    useEffect(() => { 
-// 	   // auth user on first render
-//       authenticate() 
-//    }, []);
+  //    useEffect(() => {
+  // 	   // auth user on first render
+  //       authenticate()
+  //    }, []);
 
-// 	//user authentication
-// 	function authenticate() {
-// 		return userAPI.authenticateUser()
-// 			.then(({ data }) => {
-// 				console.log('user:', data );
-//             setUserState(data);
-// 			})
-// 			.catch((err) => console.log('registered user:', err.response));
-// 	}
+  // 	//user authentication
+  // 	function authenticate() {
+  // 		return userAPI.authenticateUser()
+  // 			.then(({ data }) => {
+  // 				console.log('user:', data );
+  //             setUserState(data);
+  // 			})
+  // 			.catch((err) => console.log('registered user:', err.response));
+  // 	}
 
-	return (
+  return (
+    // <Router>
+    // 	<Head />
+    // 	<Container>
+    // 		<Switch>
+    // 			<Route
+    // 				exact
+    // 				path='/'
+    // 				render={ props => (
+    // 					<Login
+    // 						{...props}
+    // 						userState={userState}
+    // 						setUserState={setUserState}
+    // 					/>
+    // 				)}
+    // 			/>
 
-		// <Router>
-		// 	<Head />
-		// 	<Container>
-		// 		<Switch>
-		// 			<Route
-		// 				exact
-		// 				path='/'
-		// 				render={ props => (
-		// 					<Login
-		// 						{...props}
-		// 						userState={userState}
-		// 						setUserState={setUserState}
-		// 					/>
-		// 				)}
-		// 			/>
-					
-		// 		</Switch>
-		// 	</Container>
-        //  { userState.email ? <Redirect to="/main" /> : <></>}
-		// </Router>
-		<div>
-
-			<Landing/>
-			<Start/>
-			<ChatBubble/>
-			<ChatBubbleDetail/>
-
-		</div>
-	);
-
+    // 		</Switch>
+    // 	</Container>
+    //  { userState.email ? <Redirect to="/main" /> : <></>}
+    // </Router>
+	<Router>
+    <div>
+      <Route exact path="/" component={Landing} />
+      <Route exact path="/chat-bubble-detail" component={ChatBubbleDetail} />
+    </div>
+	</Router>
+  );
 }
 
 export default App;
