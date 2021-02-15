@@ -4,7 +4,16 @@ function BubbleDetail() {
 
 	return (
 		<div>
-            Bubble response text
+			<h1>
+            Type Something Bad
+			</h1>
+			<div>
+				prop.username
+			</div>
+			<div>
+				prop.usermessage. I have interview tomorrow
+			</div>
+			<div>heart icon placeholder</div>
         </div>
 	);
 };

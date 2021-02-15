@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import BubbleDetail from "../components/bubbleDetail"
+import BubbleResponse from "../components/bubbleResponse"
 
 function ChatBubbleDetail() {
 
@@ -8,8 +9,8 @@ function ChatBubbleDetail() {
         <div>
 
             <BubbleDetail />
-
-            <input placeholder={"Respond to bubble..."}></input>
+            <BubbleResponse/>
+            <input placeholder="Respond to bubble..."></input>
 
             <button>Send Button</button>
 
